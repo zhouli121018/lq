@@ -42,43 +42,6 @@ export default {
         padding:5% 0;
         font-weight: 300;
     }
-    .item-box{
-        display:flex;
-        padding:0 5%;
-        justify-content: center;
-        align-items: center;
-    }
-    .item-box div{
-        /* width:25%; */
-        margin-right:.4%;
-        position: relative;
-        overflow: hidden;
-    }
-    .item-box div:after{
-        content:"";
-        display:block;
-        clear: both;
-    }
-    .item-box div p{
-        position: relative;
-        /* position: absolute; */
-        top:0;
-    }
-    .item-box .ab{
-        position: absolute;
-        z-index: 99;
-        height:100%;
-        width:100%;
-        background:rgba(0, 0, 0, .5) url('../assets/img/sy.png');
-        background-size:100% 100%; 
-        top:85%;
-        transition: all .3s ease-in;
-    }
-
-    .item-box .ab:hover{
-        top:0%;
-    }
-    
     /* .item-box .ab.up{
         top:0;
     } */
