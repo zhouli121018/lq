@@ -44,7 +44,6 @@ export default {
     }
     .item-box{
         display:flex;
-        border:1px solid #f00;
         padding:0 5%;
         justify-content: center;
         align-items: center;

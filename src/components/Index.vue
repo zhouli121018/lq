@@ -62,14 +62,13 @@ export default {
     }
     #footer{
         text-align:center;
+        padding:5%;
     }
     .red{
         color:red;
-        font-weight:500;
+        font-weight:600;
     }
     #content{
-        border:1px solid #000;
-        /* width:100%; */
         min-height:500px;
     }
 </style>
