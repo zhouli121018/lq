@@ -1,12 +1,15 @@
 <template>
   <div>
       <div id="header">
-                <img src="../assets/img/logo.png" alt="longqingyouxi">
-                <ul>
-                    <li v-for="(l,index) in tabs" :key="index">
-                        <router-link :to="l.link">{{l.content}}</router-link> 
-                    </li>
-                </ul>
+            <div class="img-box">
+                <img class="img-responsive" src="../assets/img/logo.png" alt="longqingyouxi">
+            </div>
+            
+            <ul>
+                <li v-for="(l,index) in tabs" :key="index">
+                    <router-link :to="l.link">{{l.content}}</router-link> 
+                </li>
+            </ul>
       </div>
       <div id="content">
           <router-view></router-view>
@@ -42,14 +45,16 @@ export default {
         padding:10px 0;
         text-align:center;
         display:flex;
-        width:60%;
-        margin-left:20%;
+        padding:2% 20%;
     }
     #header ul{
         display:flex;
-        flex-grow:0.8;
+        flex-grow:1;
         justify-content: space-around;
         align-items: center;
+    }
+    .img-box{
+        width:25%;
     }
     #header ul>li{
         padding:5px;

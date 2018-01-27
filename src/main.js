@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import "./assets/css/bootstrap.css"
+import "./assets/css/font-awesome.css"
+import "./assets/css/animate.css"
 import "./assets/css/app.css"
 
 Vue.config.productionTip = false
