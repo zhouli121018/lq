@@ -7,10 +7,10 @@
       <div class="item-box">
           <div v-for="(item,index) in items" :key="index">
             <img class="img-responsive" :src="item.img" :alt="item.alt" >
-            <transition name="move">
-            <div class="ab" :class="{up:item.top==1}"  @mouseenter="slideUp(item)" @mouseleave="slideDown(item)">
+            <!-- <transition name="move"> -->
+            <div class="ab">
             </div>
-            </transition>
+            <!-- </transition> -->
           </div>
       </div>
   </div>
@@ -66,14 +66,20 @@ export default {
     }
     .item-box .ab{
         position: absolute;
+        z-index: 99;
         height:100%;
         width:100%;
-        transition: all 3s line;
         background:rgba(0, 0, 0, .5) url('../assets/img/sy.png');
         background-size:100% 100%; 
         top:85%;
+        transition: all .3s ease-in;
     }
-    .item-box .ab.up{
+
+    .item-box .ab:hover{
+        top:0%;
+    }
+    
+    /* .item-box .ab.up{
         top:0;
-    }
+    } */
 </style>
