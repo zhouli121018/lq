@@ -8,6 +8,7 @@ import News from '@/components/News'
 import Product from '@/components/Product'
 import ZhaoPin from '@/components/ZhaoPin'
 import Connect from '@/components/Connect'
+import MapComponent from '@/components/MapComponent.vue'
 
 Vue.use(Router)
 

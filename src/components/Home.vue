@@ -20,19 +20,11 @@ export default {
   data:function(){
       return {
           items:[
-              {img:require('../assets/img/item1.png'),alt:'乐战圈',code:'sy.png',top:0},
-              {img:require('../assets/img/item2.png'),alt:'乐战圈',code:'sy.png',top:0},
-              {img:require('../assets/img/item3.png'),alt:'乐战圈',code:'sy.png',top:0},
-              {img:require('../assets/img/item4.png'),alt:'乐战圈',code:'sy.png',top:0},
+              {img:require('../assets/img/item1.png'),alt:'乐战圈',code:'sy.png'},
+              {img:require('../assets/img/item2.png'),alt:'松原麻将',code:'sy.png'},
+              {img:require('../assets/img/item3.png'),alt:'上林牌苑',code:'sy.png'},
+              {img:require('../assets/img/item4.png'),alt:'桔子棋牌',code:'sy.png'}
               ]
-      }
-  },
-  methods:{
-      slideUp:function(o){
-          o.top=1;
-      },
-      slideDown:function(o){
-          o.top=0;
       }
   }
 }
@@ -42,7 +34,4 @@ export default {
         padding:5% 0;
         font-weight: 300;
     }
-    /* .item-box .ab.up{
-        top:0;
-    } */
 </style>

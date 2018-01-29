@@ -25,6 +25,13 @@ a{
     display:block;
     clear: both;
 }
+.clear:after{
+    content:"";  
+　height:0;  
+　visibility:hidden;  
+　display:block;  
+　clear:both; 
+}
 .item-box div p{
     position: relative;
     /* position: absolute; */
