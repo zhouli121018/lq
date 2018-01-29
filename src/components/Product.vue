@@ -2,7 +2,11 @@
   <div>
       <div id="product-banner">
              <div>
-                 <img class="img-responsive" v-for="(i,index) in imgs" :key="index" :src="i.imgSrc" :class="{active:activeId==index}" alt="...">
+                 <img class="img-responsive" v-for="(i,index) in imgs" :key="index" :src="i.imgSrc" :class="{active:activeId==index}" alt="..." @mouseenter="stopCarousel" @mouseleave="startCarousel">
+
+                <ul>
+                    <li v-for="(i,index) in imgs" :key="index" :class="{active:activeId==index}" @click="changeActiveId(index)">{{index+1}}</li>
+                </ul> 
              </div>
       </div>
       <br>
@@ -34,31 +38,71 @@ export default {
                   {imgSrc:require('../assets/img/banner03.jpg')}
               ],
               activeId:0,
+              timer:null
       }
   },
   methods:{
-      showPreview:function($index,imgs,swiperObj){
-
+      changeActiveId:function(index){
+          this.activeId=index;
+          clearInterval(this.timer);
+          this.timer=null;
+          this.timer=setInterval(this.carousel,3000);
+      },
+      stopCarousel:function(){
+          console.log(this.timer)
+          clearInterval(this.timer);
+          this.timer=null;
+      },
+      carousel:function(){
+          this.activeId++;
+          if(this.activeId==3){
+              this.activeId=0;
+          }
+      },
+      startCarousel:function(){
+          this.timer=setInterval(this.carousel,3000);
       }
   },
   mounted:function(){
-      var sel=this;
-      setInterval(function(){
-          sel.activeId++;
-          if(sel.activeId==3){
-              sel.activeId=0;
-          }
-      },2500)
+      this.startCarousel();
   }
 }
 </script>
 <style>
-    #product-banner img{
-        display:none;
-        transition: all 1s ease-in;
-    }
-  #product-banner img.active{
-      display:block;
-      transition: all 1s ease-in;
-  }
+#product-banner>div{
+    width:100%;
+    overflow: hidden;
+    position: relative;
+    height:400px;
+}
+#product-banner img{
+    transition: all .5s ease-in;
+    float: left;
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+}
+#product-banner img.active{
+   z-index: 100; 
+   opacity: 1;
+}
+#product-banner>div ul{
+    position: absolute;
+    bottom:0;
+    display:flex;
+    justify-content: center;
+    width:100%;
+    z-index:150;
+}
+#product-banner>div ul li{
+    padding:.2em .6em;
+    border-radius: 50%;
+    margin-right:.4em;
+    border:1px solid #aaa;
+    cursor: pointer;
+}
+#product-banner>div ul li.active{
+    background: #0d8ce8;
+    color:#fff;
+}
 </style>

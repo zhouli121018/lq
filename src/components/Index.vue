@@ -47,7 +47,8 @@ export default {
       }
   },
   mounted:function(){
-      store.state.currentTabIdx=='connect'?this.selected=5:(store.state.currentTabIdx=='about'?this.selected=1:(store.state.currentTabIdx=='news'?this.selected=2:(store.state.currentTabIdx=='prosuct'?this.selected=3:(
+      console.log(store.state.currentTabIdx)
+      store.state.currentTabIdx=='connect'?this.selected=5:(store.state.currentTabIdx=='about'?this.selected=1:(store.state.currentTabIdx=='news'?this.selected=2:(store.state.currentTabIdx=='product'?this.selected=3:(
           store.state.currentTabIdx=='zhaoPin'?this.selected=4:this.selected=0
       ))))
   }
