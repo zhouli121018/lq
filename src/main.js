@@ -4,13 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
-import Swiper from 'swiper'
 
 import "./assets/css/bootstrap.css"
 import "./assets/css/font-awesome.css"
 import "./assets/css/animate.css"
 import "./assets/css/app.css"
-import "swiper/dist/css/swiper.min.css"
 
 Vue.config.productionTip = false
 

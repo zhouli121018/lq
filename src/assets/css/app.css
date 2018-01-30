@@ -60,6 +60,9 @@ a{
 .item-box .ab[bg=sy]{
     background-image: url('../img/sy.png');
 }
-.item-box .ab:hover{
+.item-box .ab:hover,.item-box .ab.active{
     top:0%;
+}
+img.img-responsive{
+    width:100%;
 }

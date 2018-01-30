@@ -14,7 +14,7 @@
           <div v-for="(item,index) in items" :key="index">
             <img class="img-responsive" :src="item.img" :alt="item.alt" >
             <!-- <transition name="move"> -->
-            <div class="ab" :bg="item.code">
+            <div class="ab" :bg="item.code" :class="{active:item.isActive}" @click="changeActive(item)">
             </div>
             <!-- </transition> -->
           </div>
@@ -27,11 +27,11 @@ export default {
   data:function(){
       return {
           items:[
-                {img:require('../assets/img/item1.png'),alt:'乐战圈',code:'sl'},
-                {img:require('../assets/img/item2.png'),alt:'松原麻将',code:'sy'},
-                {img:require('../assets/img/item3.png'),alt:'上林牌苑',code:'sl'},
-                {img:require('../assets/img/item4.png'),alt:'桔子棋牌',code:'jz'},
-                {img:require('../assets/img/item5.jpg'),alt:'建平麻将',code:'jp'}
+                {img:require('../assets/img/item1.png'),alt:'乐战圈',code:'sl',isActive:false},
+              {img:require('../assets/img/item2.png'),alt:'松原麻将',code:'sy',isActive:false},
+              {img:require('../assets/img/item3.png'),alt:'上林牌苑',code:'sl',isActive:false},
+              {img:require('../assets/img/item4.png'),alt:'桔子棋牌',code:'jz',isActive:false},
+              {img:require('../assets/img/item5.png'),alt:'建平麻将',code:'jp',isActive:false}
               ],
               imgs:[
                   {imgSrc:require('../assets/img/banner01.jpg')},
@@ -51,7 +51,7 @@ export default {
           this.timer=setInterval(this.carousel,3000);
       },
       stopCarousel:function(){
-          console.log(this.timer)
+        //   console.log(this.timer)
           clearInterval(this.timer);
           this.timer=null;
       },
@@ -63,6 +63,10 @@ export default {
       },
       startCarousel:function(){
           this.timer=setInterval(this.carousel,3000);
+      },
+      changeActive:function(item){
+          item.isActive=!item.isActive;
+      
       }
   },
   mounted:function(){

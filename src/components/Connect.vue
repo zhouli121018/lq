@@ -26,6 +26,6 @@ export default {
     .map-box{
         display:flex;
         justify-content: center;
-        padding-top:5%;
+        padding:5% ;
     }
 </style>
