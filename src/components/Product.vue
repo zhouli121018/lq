@@ -1,7 +1,7 @@
 <template>
   <div>
       <div id="product-banner">
-             <div>
+             <div :style="{height:(bannerHeight+40) +'px'}">
                  <img class="img-responsive" v-for="(i,index) in imgs" :key="index" :src="i.imgSrc" :class="{active:activeId==index}" alt="..." @mouseenter="stopCarousel" @mouseleave="startCarousel">
 
                 <ul>
@@ -14,7 +14,7 @@
           <div v-for="(item,index) in items" :key="index">
             <img class="img-responsive" :src="item.img" :alt="item.alt" >
             <!-- <transition name="move"> -->
-            <div class="ab">
+            <div class="ab" :bg="item.code">
             </div>
             <!-- </transition> -->
           </div>
@@ -27,10 +27,11 @@ export default {
   data:function(){
       return {
           items:[
-                {img:require('../assets/img/item1.png'),alt:'乐战圈',code:'sy.png'},
-                {img:require('../assets/img/item2.png'),alt:'松原麻将',code:'sy.png'},
-                {img:require('../assets/img/item3.png'),alt:'上林牌苑',code:'sy.png'},
-                {img:require('../assets/img/item4.png'),alt:'桔子棋牌',code:'sy.png'}
+                {img:require('../assets/img/item1.png'),alt:'乐战圈',code:'sl'},
+                {img:require('../assets/img/item2.png'),alt:'松原麻将',code:'sy'},
+                {img:require('../assets/img/item3.png'),alt:'上林牌苑',code:'sl'},
+                {img:require('../assets/img/item4.png'),alt:'桔子棋牌',code:'jz'},
+                {img:require('../assets/img/item5.jpg'),alt:'建平麻将',code:'jp'}
               ],
               imgs:[
                   {imgSrc:require('../assets/img/banner01.jpg')},
@@ -38,7 +39,8 @@ export default {
                   {imgSrc:require('../assets/img/banner03.jpg')}
               ],
               activeId:0,
-              timer:null
+              timer:null,
+              bannerHeight: document.body.clientWidth*540/1920
       }
   },
   methods:{
@@ -64,7 +66,7 @@ export default {
       }
   },
   mounted:function(){
-      this.startCarousel();
+        this.startCarousel();
   }
 }
 </script>
@@ -73,7 +75,7 @@ export default {
     width:100%;
     overflow: hidden;
     position: relative;
-    height:400px;
+    margin-bottom:4em;
 }
 #product-banner img{
     transition: all .5s ease-in;

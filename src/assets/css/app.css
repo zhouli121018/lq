@@ -48,7 +48,18 @@ a{
     top:88%;
     transition: all .3s ease-in;
 }
-
+.item-box .ab[bg=jz]{
+    background-image: url('../img/jz.png');
+}
+.item-box .ab[bg=sl]{
+    background-image: url('../img/sl.png');
+}
+.item-box .ab[bg=jp]{
+    background-image: url('../img/jp.png');
+}
+.item-box .ab[bg=sy]{
+    background-image: url('../img/sy.png');
+}
 .item-box .ab:hover{
     top:0%;
 }
